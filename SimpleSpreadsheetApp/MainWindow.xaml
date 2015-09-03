@@ -1,0 +1,19 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:dxsps="http://schemas.devexpress.com/winfx/2008/xaml/spreadsheet"
+        xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"  x:Class="SimpleSpreadsheetApp.MainWindow"
+        Title="Simple Spreadsheet Application" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <dxsps:SpreadsheetFormulaBarControl x:Name="formulabar" SpreadsheetControl="{Binding ElementName=spreadsheet}"/>
+
+        <dxsps:SpreadsheetControl Grid.Row="1" x:Name="spreadsheet" CellEndEdit="ValidateCellContent"/>
+
+    </Grid>
+</Window>
